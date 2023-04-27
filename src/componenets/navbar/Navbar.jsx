@@ -48,7 +48,7 @@ const Navbar = () => {
               className={`nav-mobile ease-in-out duration-300   `}
               onClick={toggleNav}
             >
-              <a id="nav-toggle" href="#!">
+              <a id="nav-toggle" href="#">
                 <span></span>
               </a>
             </div>
