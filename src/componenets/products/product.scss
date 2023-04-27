@@ -1,0 +1,41 @@
+@media only screen and (max-width: $breakpoint) {
+  .view-products {
+    h1 {
+      font-size: 27px !important;
+    }
+    h2 {
+      font-size: large !important;
+    }
+
+    p {
+      font-size: small !important;
+    }
+  }
+}
+
+//product-card
+
+.product-card {
+  @apply relative flex flex-col overflow-hidden bg-white shadow-lg rounded-lg
+  max-h-[240px] min-h-[240px]  max-w-[220px] min-w-[220px] cursor-pointer ease-in-out duration-300 
+    hover:shadow-xl hover:shadow-slate-300;
+    transition: transform 0.3s ease-in-out;
+    
+    .cover1,.cover2{
+      
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      
+    }
+  }
+  .product-card:hover {
+    transform: scale(1.1);
+    
+        .cover1,.cover2{
+    
+      transform: translateX(0);
+          
+        }
+}
+
+
