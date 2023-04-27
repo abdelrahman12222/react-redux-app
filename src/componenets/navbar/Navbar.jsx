@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="navigation relative   shadow-md   mb-2">
+      <section className="navigation    shadow-md   mb-2">
         <div className="nav-container">
           <div className="brand ">
             <Link className=" " to={"/"}>
