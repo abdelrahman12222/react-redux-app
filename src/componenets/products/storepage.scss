@@ -15,13 +15,15 @@
   padding: 3vw;
   z-index: 7;
   @media (max-width: 500px) {
-    min-width: 100vw;
-    max-width: 100vw;
-    margin-top: 22px;
-    padding-top: 22px;
-    .cart-container > div {
-      min-width: 50% !important;
-      max-width: 95% !important;
+    & {
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      margin-top: 22px !important;
+      padding-top: 22px !important;
+      .cart-container > div {
+        min-width: 50% !important;
+        max-width: 95% !important;
+      }
     }
   }
   .close {
