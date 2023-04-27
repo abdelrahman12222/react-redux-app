@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <>
       <section className="navigation relative   shadow-md  shadow-gray-600 mb-2">
-        <div className="nav-container  ">
+        <div className="nav-container">
           <div className="brand ">
             <Link className=" " to={"/"}>
               🍀 Clover Clothing{" "}
