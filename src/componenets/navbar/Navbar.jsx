@@ -21,8 +21,8 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="navigation bg-gray-900 relative   shadow-md  shadow-gray-600 mb-2">
-        <div className="nav-container bg-gray-900 ">
+      <section className="navigation relative   shadow-md  shadow-gray-600 mb-2">
+        <div className="nav-container  ">
           <div className="brand ">
             <Link className=" " to={"/"}>
               🍀 Clover Clothing{" "}
@@ -48,7 +48,7 @@ const Navbar = () => {
               className={`nav-mobile ease-in-out duration-300   `}
               onClick={toggleNav}
             >
-              <a id="nav-toggle" href="#">
+              <a id="nav-toggle" href="#!">
                 <span></span>
               </a>
             </div>
