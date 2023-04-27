@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="navigation relative   shadow-md  shadow-gray-600 mb-2">
+      <section className="navigation relative   shadow-md   mb-2">
         <div className="nav-container">
           <div className="brand ">
             <Link className=" " to={"/"}>
@@ -96,7 +96,7 @@ const Navbar = () => {
           </nav>
         </div>
       </section>
-      {store ? <StorePage cla="cart-open" />:<StorePage cla="cart-closed" />}
+      {store ? <StorePage cla="cart-open" />:<StorePage cla="cart-closed d-none" />}
     </>
   );
 };
