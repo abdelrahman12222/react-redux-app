@@ -1,5 +1,5 @@
 import React from "react";
-import "./homecard.scss"
+import "./Homecard.scss"
 const HomeCard = ({ icon,iconbg,shadowbg, title, nums, percent, percentdesc }) => {
   return (
     <div className="homecard  bg-gray-50 ">
