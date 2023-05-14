@@ -1,0 +1,10 @@
+.homecard{
+
+    @apply p-2 pt-2   relative w-[250px]  rounded-lg shadow-md shadow-gray-300;
+    @media (max-width:830px) 
+    
+    {
+        @apply w-full mx-3
+        
+    }
+}

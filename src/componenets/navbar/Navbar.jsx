@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import StorePage from "../products/StorePage";
-
+import { BsFillCartFill } from "react-icons/bs";
 const Navbar = () => {
   const state = useSelector((state) => state.carts);
   const productlist = useSelector((state) => state.cartitems);
@@ -21,8 +21,8 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="navigation    shadow-md   mb-2">
-        <div className="nav-container">
+      <section className="navigation bg-gray-900 relative   shadow-md  shadow-gray-600 mb-2">
+        <div className="nav-container bg-gray-900 ">
           <div className="brand ">
             <Link className=" " to={"/"}>
               🍀 Clover Clothing{" "}
@@ -36,8 +36,9 @@ const Navbar = () => {
                     onClick={toggleStore}
                     className="stm text-slate-600 nav-link"
                   >
-                    <i className=" text-blue-800 fa fa-store ">
+                    <i className=" text-blue-800 fa  ">
                       {" "}
+                      <BsFillCartFill />
                       <span>{productlist.length}</span>{" "}
                     </i>
                   </button>
@@ -87,7 +88,8 @@ const Navbar = () => {
                   className={`store  ${mob ? "hidden" : " visible"} `}
                   onClick={toggleStore}
                 >
-                  <i className=" text-blue-800 fa fa-store ">
+                  <i className=" text-blue-800 fa  ">
+                    <BsFillCartFill />
                     <span>{productlist.length}</span>
                   </i>
                 </a>
@@ -96,7 +98,7 @@ const Navbar = () => {
           </nav>
         </div>
       </section>
-      {store ? <StorePage cla="cart-open" />:<StorePage cla="cart-closed d-none" />}
+      {store ? <StorePage cla="cart-open" /> : <StorePage cla="cart-closed" />}
     </>
   );
 };

@@ -21,6 +21,8 @@
   text-transform: uppercase;
   font-size: 1.4em;
 
+  &:hover {
+  }
 
   a,
   a:visited {
@@ -220,8 +222,8 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 21px;
-        width: 21px;
+        height: 19px;
+        width: 19px;
     
         border-radius: 999px;
 

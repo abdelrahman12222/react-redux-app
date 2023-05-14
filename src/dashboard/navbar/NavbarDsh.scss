@@ -1,0 +1,27 @@
+.navbardsh {
+  @apply flex items-center justify-between min-h-[100px]  font-serif px-4 rounded-xl  py-2;
+
+  .search {
+    @apply flex items-center   max-w-xl mx-3;
+  }
+  .mobile-menu {
+    @apply hidden;
+  }
+  .nav-items {
+    @apply mr-6;
+  }
+  @media (max-width: 700px) {
+    overflow: hidden;
+    @apply px-1;
+    .search {
+      @apply hidden;
+    }
+
+    .mobile-menu {
+      @apply block;
+    }
+    .nav-items {
+      @apply mr-0;
+    }
+  }
+}

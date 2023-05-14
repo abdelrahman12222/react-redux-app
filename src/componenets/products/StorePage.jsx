@@ -16,7 +16,7 @@ const StorePage = (props) => {
        shadow-black text-white container mx-auto py-6 ${props.cla} `}
     >
       <div className="md:flex flex flex-col md:items-center">
-        <h1 className="text-xl text-center font-bold my-3 text-yellow-500">
+        <h1 className="text-xl text-center font-bold mb-3 text-yellow-500">
           Total Price: {totalprice.toFixed(2)} $
         </h1>
         <div className=" cart-container   max-h-[430px]">
