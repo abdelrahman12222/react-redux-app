@@ -7,7 +7,6 @@ import ViewProduct from "./componenets/products/ViewProduct";
 import { Audio, ColorRing, Grid } from "react-loader-spinner";
 import React, { useState, useEffect } from "react";
 import Dashboard from "./dashboard/Dashboard";
-import Profile from "./dashboard/profile/profile";
 import HomeDsh from "./dashboard/pages/HomeDsh";
 import ProfileDsh from "./dashboard/pages/ProfileDsh";
 import ProductDsh from "./dashboard/pages/ProductDsh";
