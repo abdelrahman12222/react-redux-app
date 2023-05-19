@@ -57,7 +57,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link  to={"/dashboard"}>Admin</Link>
+                <Link  to={"/dashboard/index"}>Admin</Link>
               </li>
               <li>
                 <a href="#!" onClick={() => setOn(!on)}>

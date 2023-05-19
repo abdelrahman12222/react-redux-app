@@ -10,7 +10,27 @@ import Dashboard from "./dashboard/Dashboard";
 import HomeDsh from "./dashboard/pages/HomeDsh";
 import ProfileDsh from "./dashboard/pages/ProfileDsh";
 import ProductDsh from "./dashboard/pages/ProductDsh";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./Firebase";
+import Login from "./dashboard/auth/Login";
+import SignUp from "./dashboard/auth/SignUp";
 function App() {
+  const [userStatus, setUserStatus] = useState(false);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        // ...
+        setUserStatus(true);
+        console.log("uid", uid);
+      } else {
+        // User is signed out
+        // ...
+        setUserStatus(false);
+        console.log("user is logged out");
+      }
+    });
+  }, []);
   return (
     <div className="App container-fluid  ">
       <Routes>
@@ -27,11 +47,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/view/:id" element={<ViewProduct />} />
         </Route>
-        <Route path="/dashboard" element={<Dashboard />}>
-        <Route path="/dashboard" element={<HomeDsh />}/>
-          <Route path="products" element={<ProductDsh />} />
-          <Route path="profile" element={<ProfileDsh />} />
-        </Route>
+
+          <Route path="/dashboard" element={<Dashboard />}>
+            {/* <Route path="/dashboard" element={<HomeDsh />} /> */}
+            <Route path="index" element={<HomeDsh />} />
+            <Route path="products" element={<ProductDsh />} />
+            <Route path="profile" element={<ProfileDsh />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp/>} />
+        
       </Routes>
     </div>
   );

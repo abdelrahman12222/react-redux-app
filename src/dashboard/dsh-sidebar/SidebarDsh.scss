@@ -1,5 +1,10 @@
 .sidebar {
   @apply bg-zinc-800 min-w-[250px] max-h-[95vh] rounded-xl m-4 py-3 flex flex-col  overflow-auto;
+
+  .active{
+
+    @apply bg-pink-600 rounded-md  ;
+  }
 }
 
 @media (max-width: 700px) {
@@ -14,4 +19,7 @@
       
       @apply -translate-x-72;
   }
+
+  
 }
+

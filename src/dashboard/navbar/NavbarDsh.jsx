@@ -1,12 +1,27 @@
 import React from "react";
 import { FaBell, FaDharmachakra, FaList, FaUser } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavbarDsh.scss";
 import { useDispatch } from "react-redux";
 import { sidebar_btn } from "../../store/slices/SidebarDshSlice";
 import { useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { auth } from "../../Firebase";
+import { useNavigate } from "react-router-dom";
 const NavbarDsh = () => {
-  const params = useParams();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        navigate("/login");
+        console.log("Signed out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
   const dispatch = useDispatch();
   const sidebarstate = useSelector((state) => state.sidebarstate);
 
@@ -21,7 +36,6 @@ const NavbarDsh = () => {
   //   }
 
   // }
-  console.log(params);
   return (
     <>
       <nav className=" navbardsh     ">
@@ -86,7 +100,6 @@ const NavbarDsh = () => {
                   <FaList />
                 </i>
                 <span className="">Menu</span>
-                
               </button>
               <button
                 type="button"
@@ -105,18 +118,24 @@ const NavbarDsh = () => {
                   <FaBell />
                 </i>
               </button>
-              <Link className=" text-gray-500 text-sm flex">
+              <button
+                onClick={handleLogout}
+                className=" text-gray-500 text-sm flex"
+              >
                 <i className="fa mx-1">
                   <FaUser />{" "}
                 </i>{" "}
                 SignOut{" "}
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </nav>
       {sidebarstate && (
-        <div onClick={sidebarmob} className=" fixed w-full h-full bg-gray-700 opacity-50 z-30">
+        <div
+          onClick={sidebarmob}
+          className=" fixed w-full h-full bg-gray-700 opacity-50 z-30"
+        >
           Blur
         </div>
       )}
